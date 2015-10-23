@@ -9,30 +9,8 @@ var nav               = require('../utilities/starshipNavigation.js');
 var App = React.createClass({
   mixins: [SetIntervalMixin],
 
-  getInitialState: function() {
-    return {
-      ship: {
-        info: {
-          shipName: null,
-          captain: null,
-          firstOfficer: null,
-          chiefEngineer: null,
-          tacticalOfficer: null,
-          helmsman: null
-        },
-        position: [500, 300],
-        destination: {
-          name: 'Sol',
-          position: [500, 300],
-          jurisdiction: 'Federation'
-        },
-        speed: 0
-      }
-    };
-  },
-
   render: function() {
-    var ship = this.state.ship;
+    var ship = this.props.ship;
     var stars = Stars.getStarData();
     return (
       <div>
