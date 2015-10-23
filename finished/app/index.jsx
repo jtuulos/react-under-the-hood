@@ -2,6 +2,7 @@ require('./main.css');
 var React    = require('react');
 var ReactDOM = require('react-dom');
 var App      = require('./containers/App');
+var DevTools = require('./containers/DevTools.jsx');
 var Provider = require('react-redux').Provider;
 var configureStore = require('./store/configureStore');
 
@@ -31,7 +32,10 @@ document.body.appendChild(appNode);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div>
+      <App />
+      <DevTools />
+    </div>
   </Provider>,
   appNode
 );
