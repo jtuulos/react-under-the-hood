@@ -1,4 +1,5 @@
 var React            = require('react');
+var cloneDeep        = require('lodash.cloneDeep');
 var EditableElement  = require('./EditableElement.jsx');
 
 var ShipInfo = React.createClass({
@@ -29,7 +30,7 @@ var ShipInfo = React.createClass({
   },
 
   updateShipInfo: function(key, newValue) {
-    var ship = this.props.ship;
+    var ship = cloneDeep(this.props.ship);
     ship.info[key] = newValue;
     this.props.updateShip(ship);
   }

@@ -22,7 +22,7 @@ var App = React.createClass({
           <div id="helm-header">
             <h1>Helm Control</h1>
           </div>
-          <ShipInfo ship={ship} updateShip={this.updateShip} />
+          <ShipInfo ship={ship} updateShip={this.props.updateShip} />
           <Navigation
             ship={ship}
             stars={stars}
@@ -32,10 +32,6 @@ var App = React.createClass({
         </div>
       </div>
     );
-  },
-
-  updateShip: function(ship) {
-    this.setState({ship: ship});
   },
 
   updateDestination: function(destination) {
